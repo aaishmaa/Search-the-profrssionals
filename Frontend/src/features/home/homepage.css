@@ -1,192 +1,211 @@
-
-/* Reset and base styles */
-* {
-  margin: 0;
+/* Reset some defaults */
+.homepage-container {
+  min-height: 100vh;
+  background: #f6f8fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0;
+}
+
+/* Top section styling */
+.top-section {
+  width: 100%;
+  background: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+  padding: 2rem 1rem 1rem 1rem;
   box-sizing: border-box;
 }
 
-.homepage-container {
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Top section with specific color */
-.top-section {
-  background-color:skyblue;
-  padding: 4rem 1rem;
-}
-
 .search-container {
-  max-width: 32rem;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-.page-title {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
-/* Search bar styles */
+.page-title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 .search-wrapper {
-  position: relative;
-  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .search-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 1.125rem;
-  border-radius: 9999px;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
   border: none;
-  outline: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  color: #374151;
-}
-
-.search-input::placeholder {
-  color: #6b7280;
+  font-size: 1rem;
+  min-width: 0;
 }
 
 .search-button {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  background-color: #14b8a6;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   border: none;
+  background: #fff;
+  color: #4f8cff;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 
 .search-button:hover {
-  background-color: #0d9488;
+  background: #e6f0ff;
 }
 
-/* Filter badges in top section */
 .filter-badges {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .badge {
-  padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 1rem;
-  font-size: 0.875rem;
+  background: #fff;
+  color: #4f8cff;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s;
+  box-shadow: 0 1px 4px rgba(79, 140, 255, 0.1);
+  transition: background 0.2s;
 }
 
 .badge:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background: #e6f0ff;
 }
 
-/* Bottom white section */
+/* Results section styling */
 .results-section {
-  background-color: white;
-  min-height: 24rem;
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  margin: 2rem auto 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(79, 140, 255, 0.08);
   padding: 2rem 1rem;
-  position: relative;
+  box-sizing: border-box;
 }
 
-.results-container {
-  max-width: 64rem;
-  margin: 0 auto;
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Filter dropdown in bottom section - top right */
+.results-title {
+  font-size: 1.4rem;
+  color: #4f8cff;
+  margin: 0;
+}
+
 .filter-top-right {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  min-width: 120px;
 }
 
 .filter-select-bottom {
   padding: 0.5rem 1rem;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  outline: none;
-  cursor: pointer;
-  font-size: 0.875rem;
+  border-radius: 6px;
+  border: 1px solid #e6f0ff;
+  background: #f6f8fa;
+  color: #4f8cff;
+  font-size: 1rem;
 }
 
-.filter-select-bottom option {
-  color: white;
-  background-color: black;
+.results-container {
+  min-height: 100px;
 }
 
-/* Loading and error states */
-.loading-text {
-  color: #6b7280;
+.loading-text,
+.error-text,
+.no-results-text {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin: 1rem 0;
 }
 
 .error-text {
-  color: #dc2626;
-}
-
-/* Results display */
-.results-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 1.5rem;
+  color: #ff4f4f;
 }
 
 .results-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
 }
 
 .user-item {
-  background-color: #e6f3f5;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  border: 2px solid #295b69;
-  min-width: 200px;
-  max-width: 250px;
-  flex: 0 0 auto;
+  background: #f6f8fa;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(79, 140, 255, 0.07);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.user-item:hover,
+.user-item:focus {
+  background: #e6f0ff;
+  box-shadow: 0 2px 12px rgba(79, 140, 255, 0.15);
 }
 
 .username {
-  color: #1f2937;
-  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
 }
 
 .user-date {
-  color: #6b7280;
-  font-size: 0.875rem;
+  color: #888;
+  font-size: 0.95rem;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive styles */
+@media (max-width: 900px) {
+  .results-section {
+    max-width: 95vw;
+    padding: 1.5rem 0.5rem;
+  }
   .top-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
   }
-  
-  .search-input {
-    font-size: 1rem;
-    padding: 0.875rem 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    max-width: 100vw;
+    padding: 0;
   }
-  
-  .search-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+  .results-section {
+    padding: 1rem 0.2rem;
+    border-radius: 8px;
+  }
+  .results-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .search-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .filter-badges {
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
+  .badge {
+    padding: 0.3rem 0.7rem;
   }
 }

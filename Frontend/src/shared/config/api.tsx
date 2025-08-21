@@ -4,6 +4,10 @@ export const login = (data: { username: string; password: string }) => {
   return axiosInstance.post("/auth/login", data);
 };
 
+export const logout = () => {
+  return axiosInstance.post("/auth/logout");
+};
+
 export const Register = (data: {
   email: string;
   username: string;

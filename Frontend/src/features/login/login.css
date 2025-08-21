@@ -1,60 +1,67 @@
+/* Wrapper centers the form */
 .login-wrapper {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f7fa; /* soft background */
 }
 
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Login form card */
+.loginForm {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
 }
 
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #111;
-    font-size: 22px;
+.loginForm:hover {
+  transform: translateY(-3px);
 }
 
-.login-form label {
-    font-size: 14px;
-    color: #333;
-    margin-top: 10px;
+/* Heading */
+.loginForm h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
-.login-form input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+/* Input fields */
+.loginForm input {
+  margin-bottom: 15px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.login-form input:focus {
-    outline: none;
-    border-color: #007bff;
+.loginForm input:focus {
+  border-color: #4a90e2; /* same as register */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
 }
 
-.login-form button {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 15px;
-    border: none;
-    border-radius: 6px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Button */
+.loginForm button {
+  padding: 14px;
+  background: #4a90e2; /* blue like register */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  width: 100%;
 }
 
-.login-form button:hover {
-    background-color: #0056b3;
+.loginForm button:hover {
+  background: #357ABD;
+  transform: scale(1.02);
 }

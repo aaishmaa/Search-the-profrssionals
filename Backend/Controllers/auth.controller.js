@@ -44,6 +44,7 @@ export  async function login(req, res) {
     }
 
 }
+
  
 export async function getAllUsers(req, res) {
     try{
@@ -62,6 +63,7 @@ export async function getAllUsers(req, res) {
     }
 
 } 
+
 
 
 

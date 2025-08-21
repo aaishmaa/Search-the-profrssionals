@@ -54,7 +54,7 @@ export default function Login() {
           name="password"
           onChange={handleChange}
           value={formData.password}
-          type="text"
+          type="password"
         />
         <button type="submit">Submit</button>
       </form>

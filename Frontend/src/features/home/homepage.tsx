@@ -33,12 +33,10 @@ export default function Homepage() {
 
   return (
     <div className="homepage-container">
-      {/* Top section with specific color background */}
+      {/* Top section */}
       <div className="top-section">
         <div className="search-container">
           <h2 className="page-title">Search Professionals</h2>
-
-          {/* Search Bar */}
           <form className="search-wrapper" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -51,8 +49,6 @@ export default function Homepage() {
               Search
             </button>
           </form>
-
-          {/* Filter badges */}
           <div className="filter-badges">
             <span className="badge">All</span>
             <span className="badge">Designers</span>
@@ -63,40 +59,44 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-      {/* Bottom white section */}
-      <button onClick={() => navigate("/profile")}>
-        <div className="results-section">
-          <div className="results-container">
-            {/* Filter dropdown in top right */}
-            <div className="filter-top-right">
-              <select className="filter-select-bottom">
-                <option>Filter</option>
-              </select>
-            </div>
-
-            {loading && <p className="loading-text">Loading...</p>}
-            {error && <p className="error-text">{error}</p>}
-
-            {userList.length > 0 && (
-              <div>
-                <h3 className="results-title">Results:</h3>
-                <ul className="results-list">
-                  {userList.map((user) => (
-                    <li key={user._id} className="user-item">
-                      <strong className="username">{user.username}</strong>{" "}
-                      <br />
-                      <small className="user-date">
-                        {new Date(user.createdAt).toLocaleString()}
-                      </small>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+      {/* Results section */}
+      <div className="results-section">
+        <div className="results-header">
+          <div className="results-title-container">
+            <h3 className="results-title">Results</h3>
+          </div>
+          <div className="filter-top-right">
+            <select className="filter-select-bottom">
+              <option>Filter</option>
+            </select>
           </div>
         </div>
-      </button>
-         
+        <div className="results-container">
+          {loading && <p className="loading-text">Loading...</p>}
+          {error && <p className="error-text">{error}</p>}
+          {userList.length > 0 ? (
+            <ul className="results-list">
+              {userList.map((user) => (
+                <li
+                  key={user._id}
+                  className="user-item"
+                  onClick={() => navigate("/profile")}
+                  tabIndex={0}
+                  role="button"
+                >
+                  <strong className="username">{user.username}</strong>
+                  <br />
+                  <small className="user-date">
+                    {new Date(user.createdAt).toLocaleString()}
+                  </small>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            !loading && <p className="no-results-text">No users found.</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

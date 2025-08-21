@@ -22,8 +22,18 @@ const userSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  profilePicture:{
+  url:{
+    type:String,
   }
+},
+createdAt:{
+  type: Date,
+  default: Date.now
+}
 });
+
 
 const user = model('User', userSchema);
 export default user;

@@ -1,52 +1,61 @@
-.login-wrapper {
-  width: 350px;
-  margin: 50px auto;
-  padding: 25px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f7fa; /* light background */
 }
 
 .RegisterForm {
-  display: flex;
-  flex-direction: column;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.RegisterForm:hover {
+  transform: translateY(-3px);
 }
 
 .RegisterForm h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
   color: #333;
 }
 
 .RegisterForm input {
   margin-bottom: 15px;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #bbb;
-  border-radius: 5px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .RegisterForm input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px #4a90e2;
+  border-color: #4caf50; /* green border on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
 }
 
 .RegisterForm button {
-  padding: 12px;
-  background-color: #4a90e2;
+  padding: 14px;
+  background: #4caf50;
   color: white;
-  font-size: 1.1rem;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.1s ease;
+  width: 100%;
 }
 
 .RegisterForm button:hover {
-  background-color: #357ABD;
+  background: #45a049;
+  transform: scale(1.02);
 }
-  
