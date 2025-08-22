@@ -1,6 +1,6 @@
 # Search the Professionals
 
-A full-stack application built with Node.js, Express, and React.
+A full-stack application built with ,MongoDb, Node.js, Express, and React.
 
 ---
 
